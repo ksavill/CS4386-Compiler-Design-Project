@@ -1,0 +1,12 @@
+flex -o analyzer.c analyzer.l
+
+bison -d tl13.y -o tl13.tab.c
+
+gcc -o tl13parser tl13.tab.c analyzer.c symbol_table.c -lfl
+
+
+FOR DEBUGGING:
+
+flex -d -o analyzer.c analyzer.l
+
+bison --debug -o tl13.tab.c tl13.y
